@@ -1,0 +1,128 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  color: #fff;
+  font-weight: 700;
+}
+
+.wrapper {
+  box-sizing: border-box;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../assets/sky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 40px 60px;
+  min-height: 100vh;
+}
+
+.container header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.container header input {
+  padding: 7px 600px 7px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 20px;
+}
+
+.container header input:focus {
+  outline: none;
+}
+
+.container header button {
+  padding: 7px 60px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.city-name {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.tem-and-icon {
+  margin: 20px 0;
+  display: flex;
+  gap: 50px;
+  align-items: center;
+}
+
+.temp {
+  font-size: 72px;
+}
+
+.icon {
+  width: 150px;
+  height: 150px;
+}
+
+.short-describtion {
+  font-size: 24px;
+  margin: 20px 0;
+}
+
+.features {
+  list-style: none;
+  display: flex;
+  gap: 10px 50px;
+  padding: 0;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1180px) {
+  .container header input {
+    padding: 7px 200px 7px 20px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container header input {
+    width: 150px;
+    padding: 7px 30px;
+  }
+}
+
+@media screen and (max-width: 590px) {
+  .wrapper {
+    padding: 10px;
+  }
+
+  .container header {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .container header input {
+    font-size: 16px;
+  }
+
+  .container header button {
+    font-size: 16px;
+  }
+
+  .temp {
+    font-size: 48px;
+  }
+
+  .icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .features {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 305px) {
+  .tem-and-icon {
+    gap: 20px;
+  }
+}
