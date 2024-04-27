@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import loadingIcon from "../assets/loading-svgrepo-com.svg";
 import "./styles.css";
 
 function getDate() {
@@ -48,7 +49,11 @@ export default function WeatherApp() {
   }, [city]);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-page">
+        <img src={loadingIcon} alt="loading-icon" />
+      </div>
+    );
   }
 
   if (errorMessage) {
