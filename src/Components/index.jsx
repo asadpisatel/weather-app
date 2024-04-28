@@ -22,8 +22,12 @@ export default function WeatherApp() {
   const [currentDate, setCurrentDate] = useState(getDate());
 
   function handleSubmit() {
-    setCity(input);
-    setInput("");
+    setTimeout(() => {
+      if (input) {
+        setCity(input);
+        setInput("");
+      }
+    }, 1000);
   }
 
   async function fetchData() {
@@ -34,8 +38,11 @@ export default function WeatherApp() {
       );
       const gettedDataForCity = await responseForCity.json();
 
-      if (gettedDataForCity) {
+      if (gettedDataForCity && gettedDataForCity.error === undefined) {
         setData(gettedDataForCity);
+        setLoading(false);
+      } else {
+        setErrorMessage(gettedDataForCity.error.message);
         setLoading(false);
       }
     } catch (e) {
